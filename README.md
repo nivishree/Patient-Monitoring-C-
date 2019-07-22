@@ -2,4 +2,5 @@ Case Study - I:
 
 Easy selection of Patient monitor using C++:
 -------------------------------------------
-A chatbot is made using a console Application. The Chatbot will accept input and give its response on the console. The conversation (sequence of messages) should lead the customer to a purchase-suggestion.
+A chatbot is made as a console Application.
+This is accept the input from the user and depending on the requirement it will suggest a patient monitor which serves his/her purpose.
