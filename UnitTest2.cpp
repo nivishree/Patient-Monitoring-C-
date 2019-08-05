@@ -29,43 +29,43 @@ namespace PatientMonitor
 		TEST_METHOD(TestNumberOfOptionsForAquestion)
 		{
 			
-			DataFetch obj(chatbot);
+			DataFetch datafetch(chatbot);
 			int expected = 5;
 			char questionid[]="1";
-			int actual = obj.OptionCount(questionid);
+			int actual = datafetch.OptionCount(questionid);
 			Assert::AreEqual(expected, actual);
 			
 		}
 		TEST_METHOD(TestNumberOfOptionsForAQuestion_1)
 		{
-			DataFetch obj(chatbot);
+			DataFetch datafetch(chatbot);
 			int expected = 5;
 			char questionid[] = "12";
-			int actual = obj.OptionCount(questionid);
+			int actual = datafetch.OptionCount(questionid);
 			Assert::AreEqual(expected, actual);
 
 		}
 		TEST_METHOD(TestNumberOfOptionsForAQuestion_2)
 		{
 			int expected = 3;
-			DataFetch obj(chatbot);
-			Assert::AreEqual(expected, obj.MonitorIdFetch("5", "2"));
+			DataFetch datafetch(chatbot);
+			Assert::AreEqual(expected, datafetch.MonitorIdFetch("5", "2"));
 
 		}
 		TEST_METHOD(TestNumberOfOptionsForAQuestion_3)
 		{
 			int expected = 10;
-			DataFetch obj2(chatbot);
+			DataFetch datafetch(chatbot);
 			Assert::AreEqual(expected, obj2.MonitorIdFetch("11", "3"));
 
 		}
 		TEST_METHOD(TestIfCorrectQuestionForGivenQuestionid_1)
 		{
-			DataFetch obj1(chatbot);
+			DataFetch datafetch(chatbot);
 			int a;
 			char* expected = "What kind of storage are you looking for ?";
 			
-			if (strcmp(expected, obj1.QuestionFetch("11")) == 0)
+			if (strcmp(expected, datafetch.QuestionFetch("11")) == 0)
 			{
 				a = 1;
 			}
@@ -73,11 +73,11 @@ namespace PatientMonitor
 		}
 		TEST_METHOD(TestIFCorrectQuestionForGivenQuestionid_2)
 		{
-			DataFetch obj1(chatbot);
+			DataFetch datafetch(chatbot);
 			int a;
 			char* expected = "Do you require Microstream Co2 for capnography measurement ?";
 
-			if (strcmp(expected, obj1.QuestionFetch("6")) == 0)
+			if (strcmp(expected, datafetch.QuestionFetch("6")) == 0)
 			{
 				a = 1;
 			}
@@ -87,11 +87,11 @@ namespace PatientMonitor
 		{
 
 
-			DataFetch obj1(chatbot);
+			DataFetch datafetch(chatbot);
 			int a;
 			char* expected = "Avalon FM20";
 			char monitorid[] = "2";
-			if (strcmp(expected, obj1.MonitorNameFetch(monitorid)) == 0)
+			if (strcmp(expected, datafetch.MonitorNameFetch(monitorid)) == 0)
 			{
 				a = 1;
 			}
@@ -102,11 +102,11 @@ namespace PatientMonitor
 		{
 
 
-			DataFetch obj1(chatbot);
+			DataFetch datafetch(chatbot);
 			int a;
 			char* expected = "IntelliVue MP90";
 			char monitorid[] = "21";
-			if (strcmp(expected, obj1.MonitorNameFetch(monitorid)) == 0)
+			if (strcmp(expected, datafetch.MonitorNameFetch(monitorid)) == 0)
 			{
 				a = 1;
 			}
@@ -116,11 +116,11 @@ namespace PatientMonitor
 		TEST_METHOD(TestForMonitorNameGivenMonitorid_3)
 		{
 			
-			DataFetch obj1(chatbot);
+			DataFetch datafetch(chatbot);
 			int a;
 			char* expected = "Efficia CM series";
 			char monitorid[] = "28";
-			if (strcmp(expected, obj1.MonitorNameFetch(monitorid)) == 0)
+			if (strcmp(expected, datafetch.MonitorNameFetch(monitorid)) == 0)
 			{
 				a = 1;
 			}
@@ -129,17 +129,17 @@ namespace PatientMonitor
 		}
 		TEST_METHOD(TestIfCorrectLinkedOuestionFetchedGivenOptionAndQuestionID_1)
 		{
-			DataFetch obj1(chatbot);
+			DataFetch datafetch(chatbot);
 			int expected = 5;
-			Assert::AreEqual(expected, obj1.LinkIdFetch("3", "2"));
+			Assert::AreEqual(expected, datafetch.LinkIdFetch("3", "2"));
 
 		}
 
 		TEST_METHOD(TestIfCorrectLinkedOuestionFetchedGivenOptionAndQuestionID_2)
 		{
-			DataFetch obj2(chatbot);
+			DataFetch datafetch(chatbot);
 			int expected = 10;
-			Assert::AreEqual(expected, obj2.LinkIdFetch("9", "2"));
+			Assert::AreEqual(expected, datafetch.LinkIdFetch("9", "2"));
 
 		};
 	};
