@@ -17,9 +17,9 @@ using namespace std;
 int main()
 {
 
-	Chatbot chatbot1;
-	DataFetch datafetch1(chatbot1);
-	Linker linker1(chatbot1);
+	Chatbot chatbot;
+	DataFetch datafetch(chatbot);
+	Linker linker(chatbot);
 
 	const unsigned BUFFER_SIZE = 200;
 
@@ -28,19 +28,19 @@ int main()
 	cout << "Hi User, Welcome . I am Elbot!" << endl;
 	cout << "Let's chat,press a key to continue. " << endl;
 	getchar();
-	datafetch1.QuestionFetch(question);
-	datafetch1.OptionFetch(question);
-	strncpy_s(firstoption, chatbot1.getOption(), BUFFER_SIZE - strlen(firstoption) - 1);
+	datafetch.QuestionFetch(question);
+	datafetch.OptionFetch(question);
+	strncpy_s(firstoption, chatbot.getOption(), BUFFER_SIZE - strlen(firstoption) - 1);
 	int o;
 	o = atoi(firstoption);
-	int w = datafetch1.OptionCount(question);
+	int w = datafetch.OptionCount(question);
 	while (o > w || isNumber(firstoption) == 0)
 	{
 		cout << "Enter a valid option" << endl;
-		strncpy_s(firstoption, chatbot1.getOption(), BUFFER_SIZE - strlen(firstoption) - 1);
+		strncpy_s(firstoption, chatbot.getOption(), BUFFER_SIZE - strlen(firstoption) - 1);
 		o = atoi(firstoption);
 	}
-	linker1.process(question, firstoption);
+	linker.process(question, firstoption);
 
 	return 0;
 }
